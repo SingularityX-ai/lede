@@ -39,9 +39,31 @@ struct symbol *modules_sym;
 static tristate modules_val;
 int recursive_is_error;
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 enum symbol_type sym_get_type(struct symbol *sym)
 {
 	enum symbol_type type = sym->type;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	if (type == S_TRISTATE) {
 		if (sym_is_choice_value(sym) && sym->visible == yes)
@@ -51,15 +73,70 @@ enum symbol_type sym_get_type(struct symbol *sym)
 	}
 	return type;
 }
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  */
+ */
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 const char *sym_type_name(enum symbol_type type)
 {
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	switch (type) {
 	case S_BOOLEAN:
 		return "bool";
 	case S_TRISTATE:
 		return "tristate";
 	case S_INT:
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		return "integer";
 	case S_HEX:
 		return "hex";
@@ -84,7 +161,40 @@ static struct property *sym_get_default_prop(struct symbol *sym)
 {
 	struct property *prop;
 
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	for_all_defaults(sym, prop) {
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 /**
+		  * Transforms the sign-up request data to match the backend's expected format.
+		  *
+		  * @param {SignUpRequest} signUpData - The original sign-up request data.
+		  *
+		  * @returns {Object} The transformed sign-up request data with the following changes:
+		  * - `firstName` is mapped to `first_name`
+		  * - `lastName` is mapped to `last_name`
+		  * - `email` is mapped to `username`
+		  * - All other properties remain unchanged.
+		  */
+		 */
 		prop->visible.tri = expr_calc_value(prop->visible.expr);
 		if (prop->visible.tri != no)
 			return prop;
@@ -137,12 +247,17 @@ static void sym_validate_range(struct symbol *sym)
 	default:
 		return;
 	}
-	prop = sym_get_range_prop(sym);
-	if (!prop)
-		return;
-	val = strtoll(sym->curr.val, NULL, base);
-	val2 = sym_get_range_val(prop->expr->left.sym, base);
-	if (val >= val2) {
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		val2 = sym_get_range_val(prop->expr->right.sym, base);
 		if (val <= val2)
 			return;

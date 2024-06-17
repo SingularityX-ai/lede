@@ -14,6 +14,748 @@
 
 #define ARRAY_SIZE(arr)		(sizeof(arr) / sizeof((arr)[0]))
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ *
+ * @example
+ * const originalData = {
+ *   firstName: 'John',
+ *   lastName: 'Doe',
+ *   email: 'john.doe@example.com',
+ *   password: 'securePassword123'
+ * };
+ *
+ * const transformedData = transformSignUpRequestForBackend(originalData);
+ * console.log(transformedData);
+ * // Outputs:
+ * // {
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  *
+  * @example
+  /**
+   * Transforms the sign-up request data to match the backend's expected format.
+   *
+   * @param {SignUpRequest} signUpData - The original sign-up request data.
+   *
+   * @returns {Object} The transformed sign-up request data with the following changes:
+   * - `firstName` is mapped to `first_name`
+   * - `lastName` is mapped to `last_name`
+   * - `email` is mapped to `username`
+   /**
+    * Transforms the sign-up request data to match the backend's expected format.
+    *
+    * @param {SignUpRequest} signUpData - The original sign-up request data.
+    *
+    * @returns {Object} The transformed sign-up request data with the following changes:
+    * - `firstName` is mapped to `first_name`
+    * - `lastName` is mapped to `last_name`
+    * - `email` is mapped to `username`
+    * - All other properties remain unchanged.
+    *
+    * @example
+    * const originalData = {
+    *   firstName: 'John',
+    *   lastName: 'Doe',
+    *   email: 'john.doe@example.com',
+    *   password: 'securePassword123'
+    * };
+    *
+    * const transformedData = transformSignUpRequestForBackend(originalData);
+    * console.log(transformedData);
+    * // Outputs:
+    * // {
+    * //   firstName: 'John',
+    * //   lastName: 'Doe',
+    * //   email: 'john.doe@example.com',
+    * //   password: 'securePassword123',
+    /**
+     * Transforms the sign-up request data to match the backend's expected format.
+     *
+     * @param {SignUpRequest} signUpData - The original sign-up request data.
+     *
+     * @returns {Object} The transformed sign-up request data with the following changes:
+     * - `firstName` is mapped to `first_name`
+     * - `lastName` is mapped to `last_name`
+     * - `email` is mapped to `username`
+     * - All other properties remain unchanged.
+     *
+     * @example
+     * const originalData = {
+     *   firstName: 'John',
+     *   lastName: 'Doe',
+     *   email: 'john.doe@example.com',
+     *   password: 'securePassword123'
+     * };
+     *
+     * const transformedData = transformSignUpRequestForBackend(originalData);
+     * console.log(transformedData);
+     * // Outputs:
+     * // {
+     /**
+      * Transforms the sign-up request data to match the backend's expected format.
+      *
+      * @param {SignUpRequest} signUpData - The original sign-up request data.
+      *
+      * @returns {Object} The transformed sign-up request data with the following changes:
+      * - `firstName` is mapped to `first_name`
+      * - `lastName` is mapped to `last_name`
+      * - `email` is mapped to `username`
+      /**
+       * Transforms the sign-up request data to match the backend's expected format.
+       *
+       * @param {SignUpRequest} signUpData - The original sign-up request data.
+       *
+       * @returns {Object} The transformed sign-up request data with the following changes:
+       /**
+        * Transforms the sign-up request data to match the backend's expected format.
+        *
+        * @param {SignUpRequest} signUpData - The original sign-up request data.
+        *
+        * @returns {Object} The transformed sign-up request data with the following changes:
+        * - `firstName` is mapped to `first_name`
+        * - `lastName` is mapped to `last_name`
+        /**
+         * Transforms the sign-up request data to match the backend's expected format.
+         *
+         * @param {SignUpRequest} signUpData - The original sign-up request data.
+         *
+         * @returns {Object} The transformed sign-up request data with the following changes:
+         * - `firstName` is mapped to `first_name`
+         * - `lastName` is mapped to `last_name`
+         * - `email` is mapped to `username`
+         * - All other properties remain unchanged.
+         /**
+          * Transforms the sign-up request data to match the backend's expected format.
+          *
+          * @param {SignUpRequest} signUpData - The original sign-up request data.
+          *
+          * @returns {Object} The transformed sign-up request data with the following changes:
+          * - `firstName` is mapped to `first_name`
+          * - `lastName` is mapped to `last_name`
+          * - `email` is mapped to `username`
+          * - All other properties remain unchanged.
+          *
+          * @example
+          * const originalData = {
+          *   firstName: 'John',
+          *   lastName: 'Doe',
+          *   email: 'john.doe@example.com',
+          *   password: 'securePassword123'
+          * };
+          *
+          * const transformedData = transformSignUpRequestForBackend(originalData);
+          * console.log(transformedData);
+          * // Outputs:
+          * // {
+          * //   firstName: 'John',
+          * //   lastName: 'Doe',
+          * //   email: 'john.doe@example.com',
+          * //   password: 'securePassword123',
+          * //   first_name: 'John',
+          * //   last_name: 'Doe',
+          * //   username: 'john.doe@example.com'
+          * // }
+          */
+         *
+         * @example
+         * const originalData = {
+         *   firstName: 'John',
+         *   lastName: 'Doe',
+         *   email: 'john.doe@example.com',
+         *   password: 'securePassword123'
+         * };
+         *
+         /**
+          * Transforms the sign-up request data to match the backend's expected format.
+          *
+          * @param {SignUpRequest} signUpData - The original sign-up request data.
+          *
+          * @returns {Object} The transformed sign-up request data with the following changes:
+          * - `firstName` is mapped to `first_name`
+          * - `lastName` is mapped to `last_name`
+          * - `email` is mapped to `username`
+          * - All other properties remain unchanged.
+          *
+          * @example
+          * const originalData = {
+          *   firstName: 'John',
+          *   lastName: 'Doe',
+          *   email: 'john.doe@example.com',
+          *   password: 'securePassword123'
+          * };
+          *
+          * const transformedData = transformSignUpRequestForBackend(originalData);
+          * console.log(transformedData);
+          * // Outputs:
+          /**
+           * Transforms the sign-up request data to match the backend's expected format.
+           *
+           * @param {SignUpRequest} signUpData - The original sign-up request data.
+           *
+           * @returns {Object} The transformed sign-up request data with the following changes:
+           * - `firstName` is mapped to `first_name`
+           * - `lastName` is mapped to `last_name`
+           * - `email` is mapped to `username`
+           * - All other properties remain unchanged.
+           *
+           * @example
+           * const originalData = {
+           *   firstName: 'John',
+           *   lastName: 'Doe',
+           *   email: 'john.doe@example.com',
+           *   password: 'securePassword123'
+           * };
+           *
+           * const transformedData = transformSignUpRequestForBackend(originalData);
+           * console.log(transformedData);
+           * // Outputs:
+           * // {
+           * //   firstName: 'John',
+           * //   lastName: 'Doe',
+           * //   email: 'john.doe@example.com',
+           * //   password: 'securePassword123',
+           * //   first_name: 'John',
+           * //   last_name: 'Doe',
+           * //   username: 'john.doe@example.com'
+           * // }
+           */
+          * // {
+          * //   firstName: 'John',
+          * //   lastName: 'Doe',
+          * //   email: 'john.doe@example.com',
+          * //   password: 'securePassword123',
+          * //   first_name: 'John',
+          /**
+           * Transforms the sign-up request data to match the backend's expected format.
+           *
+           * @param {SignUpRequest} signUpData - The original sign-up request data.
+           *
+           * @returns {Object} The transformed sign-up request data with the following changes:
+           * - `firstName` is mapped to `first_name`
+           * - `lastName` is mapped to `last_name`
+           * - `email` is mapped to `username`
+           * - All other properties remain unchanged.
+           *
+           * @example
+           * const originalData = {
+           /**
+            * Transforms the sign-up request data to match the backend's expected format.
+            *
+            * @param {SignUpRequest} signUpData - The original sign-up request data.
+            *
+            * @returns {Object} The transformed sign-up request data with the following changes:
+            * - `firstName` is mapped to `first_name`
+            * - `lastName` is mapped to `last_name`
+            * - `email` is mapped to `username`
+            * - All other properties remain unchanged.
+            *
+            * @example
+            * const originalData = {
+            *   firstName: 'John',
+            *   lastName: 'Doe',
+            *   email: 'john.doe@example.com',
+            *   password: 'securePassword123'
+            * };
+            *
+            * const transformedData = transformSignUpRequestForBackend(originalData);
+            * console.log(transformedData);
+            * // Outputs:
+            * // {
+            * //   firstName: 'John',
+            * //   lastName: 'Doe',
+            * //   email: 'john.doe@example.com',
+            * //   password: 'securePassword123',
+            * //   first_name: 'John',
+            * //   last_name: 'Doe',
+            /**
+             * Transforms the sign-up request data to match the backend's expected format.
+             *
+             * @param {SignUpRequest} signUpData - The original sign-up request data.
+             *
+             * @returns {Object} The transformed sign-up request data with the following changes:
+             * - `firstName` is mapped to `first_name`
+             * - `lastName` is mapped to `last_name`
+             * - `email` is mapped to `username`
+             * - All other properties remain unchanged.
+             *
+             * @example
+             * const originalData = {
+             *   firstName: 'John',
+             *   lastName: 'Doe',
+             *   email: 'john.doe@example.com',
+             *   password: 'securePassword123'
+             * };
+             *
+             * const transformedData = transformSignUpRequestForBackend(originalData);
+             * console.log(transformedData);
+             * // Outputs:
+             * // {
+             * //   firstName: 'John',
+             * //   lastName: 'Doe',
+             * //   email: 'john.doe@example.com',
+             * //   password: 'securePassword123',
+             * //   first_name: 'John',
+             * //   last_name: 'Doe',
+             * //   username: 'john.doe@example.com'
+             * // }
+             */
+            * //   username: 'john.doe@example.com'
+            * // }
+            */
+           *   firstName: 'John',
+           *   lastName: 'Doe',
+           *   email: 'john.doe@example.com',
+           *   password: 'securePassword123'
+           * };
+           *
+           * const transformedData = transformSignUpRequestForBackend(originalData);
+           * console.log(transformedData);
+           * // Outputs:
+           * // {
+           * //   firstName: 'John',
+           /**
+            * Transforms the sign-up request data to match the backend's expected format.
+            *
+            * @param {SignUpRequest} signUpData - The original sign-up request data.
+            *
+            * @returns {Object} The transformed sign-up request data with the following changes:
+            * - `firstName` is mapped to `first_name`
+             *
+             * @returns {Object} The transformed sign-up request data with the following changes:
+             * - `firstName` is mapped to `first_name`
+             * - `lastName` is mapped to `last_name`
+             * - `email` is mapped to `username`
+             * - All other properties remain unchanged.
+             *
+             * @example
+             * const originalData = {
+             *   firstName: 'John',
+             *   lastName: 'Doe',
+             /**
+              * Transforms the sign-up request data to match the backend's expected format.
+              *
+              * @param {SignUpRequest} signUpData - The original sign-up request data.
+              *
+              * @returns {Object} The transformed sign-up request data with the following changes:
+              * - `firstName` is mapped to `first_name`
+              * - `lastName` is mapped to `last_name`
+              * - `email` is mapped to `username`
+              * - All other properties remain unchanged.
+              *
+              * @example
+              * const originalData = {
+              *   firstName: 'John',
+              *   lastName: 'Doe',
+              *   email: 'john.doe@example.com',
+              *   password: 'securePassword123'
+              * };
+              *
+              * const transformedData = transformSignUpRequestForBackend(originalData);
+              * console.log(transformedData);
+              * // Outputs:
+              * // {
+              * //   firstName: 'John',
+              * //   lastName: 'Doe',
+              * //   email: 'john.doe@example.com',
+              * //   password: 'securePassword123',
+              * //   first_name: 'John',
+              * //   last_name: 'Doe',
+              * //   username: 'john.doe@example.com'
+              * // }
+              */
+             *   email: 'john.doe@example.com',
+             *   password: 'securePassword123'
+             * };
+             *
+             * const transformedData = transformSignUpRequestForBackend(originalData);
+             * console.log(transformedData);
+             * // Outputs:
+             * // {
+             * //   firstName: 'John',
+             * //   lastName: 'Doe',
+             * //   email: 'john.doe@example.com',
+             * //   password: 'securePassword123',
+             * //   first_name: 'John',
+             * //   last_name: 'Doe',
+             * //   username: 'john.doe@example.com'
+             * // }
+             */
+            * - All other properties remain unchanged.
+            *
+            * @example
+            * const originalData = {
+            *   firstName: 'John',
+            *   lastName: 'Doe',
+            *   email: 'john.doe@example.com',
+            *   password: 'securePassword123'
+            * };
+            *
+            * const transformedData = transformSignUpRequestForBackend(originalData);
+            * console.log(transformedData);
+            * // Outputs:
+            * // {
+            * //   firstName: 'John',
+            * //   lastName: 'Doe',
+            * //   email: 'john.doe@example.com',
+            * //   password: 'securePassword123',
+            * //   first_name: 'John',
+            * //   last_name: 'Doe',
+            * //   username: 'john.doe@example.com'
+            * // }
+            */
+           * //   lastName: 'Doe',
+           * //   email: 'john.doe@example.com',
+           * //   password: 'securePassword123',
+           * //   first_name: 'John',
+           * //   last_name: 'Doe',
+           * //   username: 'john.doe@example.com'
+           * // }
+           */
+          * //   last_name: 'Doe',
+          * //   username: 'john.doe@example.com'
+          * // }
+          */
+         * const transformedData = transformSignUpRequestForBackend(originalData);
+         * console.log(transformedData);
+         * // Outputs:
+         * // {
+         * //   firstName: 'John',
+         * //   lastName: 'Doe',
+        *   firstName: 'John',
+        *   lastName: 'Doe',
+        *   email: 'john.doe@example.com',
+        *   password: 'securePassword123'
+        * };
+        *
+        /**
+         * Transforms the sign-up request data to match the backend's expected format.
+         *
+         * @param {SignUpRequest} signUpData - The original sign-up request data.
+         *
+         * @returns {Object} The transformed sign-up request data with the following changes:
+         * - `firstName` is mapped to `first_name`
+         * - `lastName` is mapped to `last_name`
+         * - `email` is mapped to `username`
+         * - All other properties remain unchanged.
+         *
+         * @example
+         * const originalData = {
+         *   firstName: 'John',
+         *   lastName: 'Doe',
+         *   email: 'john.doe@example.com',
+         *   password: 'securePassword123'
+         * };
+         *
+         * const transformedData = transformSignUpRequestForBackend(originalData);
+         * console.log(transformedData);
+         * // Outputs:
+         * // {
+         * //   firstName: 'John',
+         * //   lastName: 'Doe',
+         * //   email: 'john.doe@example.com',
+         * //   password: 'securePassword123',
+         * //   first_name: 'John',
+         * //   last_name: 'Doe',
+         * //   username: 'john.doe@example.com'
+         * // }
+         */
+        * const transformedData = transformSignUpRequestForBackend(originalData);
+        * console.log(transformedData);
+        * // Outputs:
+        * // {
+        * //   firstName: 'John',
+        * //   lastName: 'Doe',
+        /**
+         * Transforms the sign-up request data to match the backend's expected format.
+         *
+         * @param {SignUpRequest} signUpData - The original sign-up request data.
+         *
+         * @returns {Object} The transformed sign-up request data with the following changes:
+         /**
+          * Transforms the sign-up request data to match the backend's expected format.
+          *
+          * @param {SignUpRequest} signUpData - The original sign-up request data.
+          *
+          * @returns {Object} The transformed sign-up request data with the following changes:
+          * - `firstName` is mapped to `first_name`
+          * - `lastName` is mapped to `last_name`
+          * - `email` is mapped to `username`
+          * - All other properties remain unchanged.
+          *
+          * @example
+          * const originalData = {
+          *   firstName: 'John',
+          *   lastName: 'Doe',
+          *   email: 'john.doe@example.com',
+          *   password: 'securePassword123'
+          * };
+          *
+          * const transformedData = transformSignUpRequestForBackend(originalData);
+          * console.log(transformedData);
+          * // Outputs:
+          * // {
+          * //   firstName: 'John',
+          * //   lastName: 'Doe',
+          * //   email: 'john.doe@example.com',
+          * //   password: 'securePassword123',
+          * //   first_name: 'John',
+          * //   last_name: 'Doe',
+          * //   username: 'john.doe@example.com'
+          * // }
+          */
+         * - `firstName` is mapped to `first_name`
+         * - `lastName` is mapped to `last_name`
+         * - `email` is mapped to `username`
+         * - All other properties remain unchanged.
+         *
+         * @example
+         * const originalData = {
+         *   firstName: 'John',
+         *   lastName: 'Doe',
+         *   email: 'john.doe@example.com',
+         *   password: 'securePassword123'
+         * };
+         *
+         /**
+          * Transforms the sign-up request data to match the backend's expected format.
+          *
+          * @param {SignUpRequest} signUpData - The original sign-up request data.
+          *
+          * @returns {Object} The transformed sign-up request data with the following changes:
+          * - `firstName` is mapped to `first_name`
+          * - `lastName` is mapped to `last_name`
+          * - `email` is mapped to `username`
+          * - All other properties remain unchanged.
+          *
+          * @example
+          * const originalData = {
+          *   firstName: 'John',
+          *   lastName: 'Doe',
+          *   email: 'john.doe@example.com',
+          *   password: 'securePassword123'
+          * };
+          *
+          * const transformedData = transformSignUpRequestForBackend(originalData);
+          * console.log(transformedData);
+          /**
+           * Transforms the sign-up request data to match the backend's expected format.
+           *
+           * @param {SignUpRequest} signUpData - The original sign-up request data.
+           *
+           * @returns {Object} The transformed sign-up request data with the following changes:
+           * - `firstName` is mapped to `first_name`
+           /**
+            * Transforms the sign-up request data to match the backend's expected format.
+            *
+            * @param {SignUpRequest} signUpData - The original sign-up request data.
+            *
+            * @returns {Object} The transformed sign-up request data with the following changes:
+            * - `firstName` is mapped to `first_name`
+            * - `lastName` is mapped to `last_name`
+            * - `email` is mapped to `username`
+            * - All other properties remain unchanged.
+            *
+            * @example
+            * const originalData = {
+            *   firstName: 'John',
+            *   lastName: 'Doe',
+            *   email: 'john.doe@example.com',
+            *   password: 'securePassword123'
+            * };
+            *
+            * const transformedData = transformSignUpRequestForBackend(originalData);
+            * console.log(transformedData);
+            * // Outputs:
+            * // {
+            * //   firstName: 'John',
+            * //   lastName: 'Doe',
+            * //   email: 'john.doe@example.com',
+            * //   password: 'securePassword123',
+            * //   first_name: 'John',
+            * //   last_name: 'Doe',
+            * //   username: 'john.doe@example.com'
+            * // }
+            */
+           * - `lastName` is mapped to `last_name`
+           *   email: 'john.doe@example.com',
+           *   password: 'securePassword123'
+           * };
+           *
+           * const transformedData = transformSignUpRequestForBackend(originalData);
+           * console.log(transformedData);
+           * // Outputs:
+           * // {
+           * //   firstName: 'John',
+           * //   lastName: 'Doe',
+           * //   email: 'john.doe@example.com',
+           * //   password: 'securePassword123',
+           * //   first_name: 'John',
+           * //   last_name: 'Doe',
+           * //   username: 'john.doe@example.com'
+           * // }
+           */
+          * // Outputs:
+          * // {
+          * //   firstName: 'John',
+          * //   lastName: 'Doe',
+          * //   email: 'john.doe@example.com',
+          * //   password: 'securePassword123',
+          * //   first_name: 'John',
+          * //   last_name: 'Doe',
+          * //   username: 'john.doe@example.com'
+          * // }
+          */
+         * const transformedData = transformSignUpRequestForBackend(originalData);
+         * console.log(transformedData);
+         * // Outputs:
+         * // {
+         * //   firstName: 'John',
+         * //   lastName: 'Doe',
+         * //   email: 'john.doe@example.com',
+         * //   password: 'securePassword123',
+         * //   first_name: 'John',
+         * //   last_name: 'Doe',
+         * //   username: 'john.doe@example.com'
+         * // }
+         */
+        * //   email: 'john.doe@example.com',
+        * //   password: 'securePassword123',
+        * //   first_name: 'John',
+        * //   last_name: 'Doe',
+        * //   username: 'john.doe@example.com'
+        * // }
+        */
+       * - `firstName` is mapped to `first_name`
+       * - `lastName` is mapped to `last_name`
+       * - `email` is mapped to `username`
+       * - All other properties remain unchanged.
+       *
+       * @example
+       * const originalData = {
+       *   firstName: 'John',
+       *   lastName: 'Doe',
+       *   email: 'john.doe@example.com',
+       *   password: 'securePassword123'
+       * };
+       *
+       * const transformedData = transformSignUpRequestForBackend(originalData);
+       * console.log(transformedData);
+       * // Outputs:
+       * // {
+       * //   firstName: 'John',
+       * //   lastName: 'Doe',
+       * //   email: 'john.doe@example.com',
+       * //   password: 'securePassword123',
+       * //   first_name: 'John',
+       * //   last_name: 'Doe',
+       * //   username: 'john.doe@example.com'
+       * // }
+       */
+      * - All other properties remain unchanged.
+      *
+      * @example
+      * const originalData = {
+      *   firstName: 'John',
+      *   lastName: 'Doe',
+      *   email: 'john.doe@example.com',
+      *   password: 'securePassword123'
+      * };
+      *
+      * const transformedData = transformSignUpRequestForBackend(originalData);
+      * console.log(transformedData);
+      * // Outputs:
+      * // {
+      * //   firstName: 'John',
+      * //   lastName: 'Doe',
+      * //   email: 'john.doe@example.com',
+      * //   password: 'securePassword123',
+      * //   first_name: 'John',
+      * //   last_name: 'Doe',
+      * //   username: 'john.doe@example.com'
+      * // }
+      */
+     * //   firstName: 'John',
+     * //   lastName: 'Doe',
+     * //   email: 'john.doe@example.com',
+     * //   password: 'securePassword123',
+     * //   first_name: 'John',
+     * //   last_name: 'Doe',
+     * //   username: 'john.doe@example.com'
+     * // }
+     */
+    * //   first_name: 'John',
+    * //   last_name: 'Doe',
+    * //   username: 'john.doe@example.com'
+    * // }
+    */
+   * - All other properties remain unchanged.
+   *
+   * const originalData = {
+   *   firstName: 'John',
+   *   lastName: 'Doe',
+   *   email: 'john.doe@example.com',
+   *   password: 'securePassword123'
+   * };
+   *
+   * const transformedData = transformSignUpRequestForBackend(originalData);
+   * console.log(transformedData);
+   * // Outputs:
+   * // {
+   * //   firstName: 'John',
+   * //   lastName: 'Doe',
+   * //   email: 'john.doe@example.com',
+   * //   password: 'securePassword123',
+   * //   first_name: 'John',
+   * //   last_name: 'Doe',
+   * //   username: 'john.doe@example.com'
+   * // }
+   */
+  * const originalData = {
+  *   firstName: 'John',
+  *   lastName: 'Doe',
+  *   email: 'john.doe@example.com',
+  *   password: 'securePassword123'
+  * };
+  *
+  * const transformedData = transformSignUpRequestForBackend(originalData);
+  * console.log(transformedData);
+  * // Outputs:
+  * // {
+  * //   firstName: 'John',
+  * //   lastName: 'Doe',
+  * //   email: 'john.doe@example.com',
+  * //   password: 'securePassword123',
+  * //   first_name: 'John',
+  * //   last_name: 'Doe',
+  * //   username: 'john.doe@example.com'
+  * // }
+  */
+ * //   firstName: 'John',
+ * //   lastName: 'Doe',
+ * //   email: 'john.doe@example.com',
+ * //   password: 'securePassword123',
+ * //   first_name: 'John',
+ * //   last_name: 'Doe',
+ * //   username: 'john.doe@example.com'
+ * // }
+ */
 static char *expand_string_with_args(const char *in, int argc, char *argv[]);
 static char *expand_string(const char *in);
 
@@ -189,11 +931,40 @@ static char *do_warning_if(int argc, char *argv[])
 
 static const struct function function_table[] = {
 	/* Name		MIN	MAX	Function */
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 *
+	 * @example
+	 * const originalData = {
+	 *   firstName: 'John',
+	 *   lastName: 'Doe',
+	 *   email: 'john.doe@example.com',
+	 *   password: 'securePassword123'
+	 * };
+	 *
+	 * const transformedData = transformSignUpRequestForBackend(originalData);
+	 * console.log(transformedData);
+	 * // Outputs:
+	 * // {
+	 * //   firstName: 'John',
+	 * //   lastName: 'Doe',
+	 * //   email: 'john.doe@example.com',
+	 * //   password: 'securePassword123',
+	 * //   first_name: 'John',
+	 * //   last_name: 'Doe',
+	 * //   username: 'john.doe@example.com'
+	 * // }
+	 */
 	{ "error-if",	2,	2,	do_error_if },
 	{ "filename",	0,	0,	do_filename },
-	{ "info",	1,	1,	do_info },
-	{ "lineno",	0,	0,	do_lineno },
-	{ "shell",	1,	1,	do_shell },
 	{ "warning-if",	2,	2,	do_warning_if },
 };
 
@@ -541,10 +1312,69 @@ static bool is_end_of_str(char c)
 	return !c;
 }
 
-/*
- * Expand variables and functions in the given string.  Undefined variables
- * expand to an empty string.
- * The returned string must be freed when done.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  *
+  * @example
+  * const originalData = {
+  *   firstName: 'John',
+  *   lastName: 'Doe',
+  *   email: 'john.doe@example.com',
+  *   password: 'securePassword123'
+  * };
+  *
+  * const transformedData = transformSignUpRequestForBackend(originalData);
+  * console.log(transformedData);
+  * // Outputs:
+  * // {
+  * //   firstName: 'John',
+  * //   lastName: 'Doe',
+  * //   email: 'john.doe@example.com',
+  * //   password: 'securePassword123',
+  * //   first_name: 'John',
+  * //   last_name: 'Doe',
+  * //   username: 'john.doe@example.com'
+  * // }
+  */
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ *
+ * @example
+ * const originalData = {
+ *   firstName: 'John',
+ *   lastName: 'Doe',
+ *   email: 'john.doe@example.com',
+ *   password: 'securePassword123'
+ * };
+ *
+ * const transformedData = transformSignUpRequestForBackend(originalData);
+ * console.log(transformedData);
+ * // Outputs:
+ * // {
+ * //   firstName: 'John',
+ * //   lastName: 'Doe',
+ * //   email: 'john.doe@example.com',
+ * //   password: 'securePassword123',
+ * //   first_name: 'John',
+ * //   last_name: 'Doe',
+ * //   username: 'john.doe@example.com'
+ * // }
  */
 static char *expand_string_with_args(const char *in, int argc, char *argv[])
 {

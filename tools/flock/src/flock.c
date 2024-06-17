@@ -78,8 +78,6 @@ static void usage(int ex)
 	  "  -V  --version    Display version\n"),
 	  program);
   exit(ex);
-
-	
 }
 
 

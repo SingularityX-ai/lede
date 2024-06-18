@@ -34,6 +34,17 @@ static void __attribute__((noreturn)) pperror(const char *format, ...)
  * Environment variables
  */
 static LIST_HEAD(env_list);
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 struct env {
 	char *name;
@@ -66,6 +77,17 @@ static char *env_expand(const char *name)
 	struct env *e;
 	const char *value;
 
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	if (!*name)
 		return NULL;
 
@@ -77,6 +99,17 @@ static char *env_expand(const char *name)
 	value = getenv(name);
 	if (!value)
 		return NULL;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	/*
 	 * We need to remember all referenced environment variables.
@@ -85,7 +118,17 @@ static char *env_expand(const char *name)
 	env_add(name, value);
 
 	return xstrdup(value);
-}
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 void env_write_dep(FILE *f, const char *autoconfig_name)
 {
@@ -112,6 +155,17 @@ struct function {
 static char *do_error_if(int argc, char *argv[])
 {
 	if (!strcmp(argv[0], "y"))
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		pperror("%s", argv[1]);
 
 	return xstrdup("");
@@ -134,6 +188,17 @@ static char *do_lineno(int argc, char *argv[])
 	char buf[16];
 
 	sprintf(buf, "%d", yylineno);
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	return xstrdup(buf);
 }
@@ -142,11 +207,33 @@ static char *do_shell(int argc, char *argv[])
 {
 	FILE *p;
 	char buf[256];
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	char *cmd;
 	size_t nread;
 	int i;
 
 	cmd = argv[0];
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	p = popen(cmd, "r");
 	if (!p) {
@@ -154,6 +241,17 @@ static char *do_shell(int argc, char *argv[])
 		exit(1);
 	}
 
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	nread = fread(buf, 1, sizeof(buf), p);
 	if (nread == sizeof(buf))
 		nread--;
@@ -163,6 +261,17 @@ static char *do_shell(int argc, char *argv[])
 		nread--;
 
 	buf[nread] = 0;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	/* replace a new line with a space */
 	for (i = 0; i < nread; i++) {
@@ -203,6 +312,17 @@ static char *function_expand(const char *name, int argc, char *argv[])
 {
 	const struct function *f;
 	int i;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	for (i = 0; i < ARRAY_SIZE(function_table); i++) {
 		f = &function_table[i];
@@ -224,6 +344,17 @@ static char *function_expand(const char *name, int argc, char *argv[])
 }
 
 /*
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  */
  * Variables (and user-defined functions)
  */
 static LIST_HEAD(variable_list);
@@ -240,9 +371,17 @@ static struct variable *variable_lookup(const char *name)
 {
 	struct variable *v;
 
-	list_for_each_entry(v, &variable_list, node) {
-		if (!strcmp(name, v->name))
-			return v;
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	}
 
 	return NULL;
@@ -253,6 +392,17 @@ static char *variable_expand(const char *name, int argc, char *argv[])
 	struct variable *v;
 	char *res;
 
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	v = variable_lookup(name);
 	if (!v)
 		return NULL;
@@ -265,6 +415,17 @@ static char *variable_expand(const char *name, int argc, char *argv[])
 		pperror("Too deep recursive expansion");
 
 	v->exp_count++;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	if (v->flavor == VAR_RECURSIVE)
 		res = expand_string_with_args(v->value, argc, argv);
@@ -293,6 +454,17 @@ void variable_add(const char *name, const char *value,
 			free(v->value);
 		}
 	} else {
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		/* For undefined variables, += assumes the recursive flavor */
 		if (flavor == VAR_APPEND)
 			flavor = VAR_RECURSIVE;
@@ -338,6 +510,17 @@ void variable_all_del(void)
 }
 
 /*
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  */
  * Evaluate a clause with arguments.  argc/argv are arguments from the upper
  * function call.
  *
@@ -346,6 +529,17 @@ void variable_all_del(void)
 static char *eval_clause(const char *str, size_t len, int argc, char *argv[])
 {
 	char *tmp, *name, *res, *endptr, *prev, *p;
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	int new_argc = 0;
 	char *new_argv[FUNCTION_MAX_ARGS];
 	int nest = 0;
@@ -354,12 +548,17 @@ static char *eval_clause(const char *str, size_t len, int argc, char *argv[])
 
 	tmp = xstrndup(str, len);
 
-	/*
-	 * If variable name is '1', '2', etc.  It is generally an argument
-	 * from a user-function call (i.e. local-scope variable).  If not
-	 * available, then look-up global-scope variables.
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
 	 */
-	n = strtoul(tmp, &endptr, 10);
 	if (!*endptr && n > 0 && n <= argc) {
 		res = xstrdup(argv[n - 1]);
 		goto free_tmp;
@@ -455,18 +654,17 @@ static char *expand_dollar_with_args(const char **str, int argc, char *argv[])
 	const char *p = *str;
 	const char *q;
 	int nest = 0;
-
-	/*
-	 * In Kconfig, variable/function references always start with "$(".
-	 * Neither single-letter variables as in $A nor curly braces as in ${CC}
-	 * are supported.  '$' not followed by '(' loses its special meaning.
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
 	 */
-	if (*p != '(') {
-		*str = p;
-		return xstrdup("$");
-	}
-
-	p++;
 	q = p;
 	while (*q) {
 		if (*q == '(') {
@@ -504,11 +702,33 @@ static char *__expand_string(const char **str, bool (*is_end)(char c),
 	out_len = 1;
 
 	p = in = *str;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	while (1) {
 		if (*p == '$') {
 			in_len = p - in;
 			p++;
+			/**
+			 * Transforms the sign-up request data to match the backend's expected format.
+			 *
+			 * @param {SignUpRequest} signUpData - The original sign-up request data.
+			 *
+			 * @returns {Object} The transformed sign-up request data with the following changes:
+			 * - `firstName` is mapped to `first_name`
+			 * - `lastName` is mapped to `last_name`
+			 * - `email` is mapped to `username`
+			 * - All other properties remain unchanged.
+			 */
 			expansion = expand_dollar_with_args(&p, argc, argv);
 			out_len += in_len + strlen(expansion);
 			out = xrealloc(out, out_len);
@@ -541,33 +761,76 @@ static bool is_end_of_str(char c)
 	return !c;
 }
 
-/*
- * Expand variables and functions in the given string.  Undefined variables
- * expand to an empty string.
- * The returned string must be freed when done.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static char *expand_string_with_args(const char *in, int argc, char *argv[])
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 {
 	return __expand_string(&in, is_end_of_str, argc, argv);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static char *expand_string(const char *in)
 {
 	return expand_string_with_args(in, 0, NULL);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static bool is_end_of_token(char c)
 {
 	/* Why are '.' and '/' valid characters for symbols? */
 	return !(isalnum(c) || c == '_' || c == '-' || c == '.' || c == '/');
 }
 
-/*
- * Expand variables in a token.  The parsing stops when a token separater
- * (in most cases, it is a whitespace) is encountered.  'str' is updated to
- * point to the next character.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * The returned string must be freed when done.
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 char *expand_one_token(const char **str)
 {

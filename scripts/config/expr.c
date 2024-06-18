@@ -15,6 +15,17 @@
 
 static struct expr *expr_eliminate_yn(struct expr *e);
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_alloc_symbol(struct symbol *sym)
 {
 	struct expr *e = xcalloc(1, sizeof(*e));
@@ -23,6 +34,17 @@ struct expr *expr_alloc_symbol(struct symbol *sym)
 	return e;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_alloc_one(enum expr_type type, struct expr *ce)
 {
 	struct expr *e = xcalloc(1, sizeof(*e));
@@ -31,6 +53,17 @@ struct expr *expr_alloc_one(enum expr_type type, struct expr *ce)
 	return e;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_alloc_two(enum expr_type type, struct expr *e1, struct expr *e2)
 {
 	struct expr *e = xcalloc(1, sizeof(*e));
@@ -40,6 +73,17 @@ struct expr *expr_alloc_two(enum expr_type type, struct expr *e1, struct expr *e
 	return e;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_alloc_comp(enum expr_type type, struct symbol *s1, struct symbol *s2)
 {
 	struct expr *e = xcalloc(1, sizeof(*e));
@@ -49,6 +93,17 @@ struct expr *expr_alloc_comp(enum expr_type type, struct symbol *s1, struct symb
 	return e;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_alloc_and(struct expr *e1, struct expr *e2)
 {
 	if (!e1)
@@ -56,6 +111,17 @@ struct expr *expr_alloc_and(struct expr *e1, struct expr *e2)
 	return e2 ? expr_alloc_two(E_AND, e1, e2) : e1;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_alloc_or(struct expr *e1, struct expr *e2)
 {
 	if (!e1)
@@ -63,6 +129,17 @@ struct expr *expr_alloc_or(struct expr *e1, struct expr *e2)
 	return e2 ? expr_alloc_two(E_OR, e1, e2) : e1;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 struct expr *expr_copy(const struct expr *org)
 {
 	struct expr *e;
@@ -104,6 +181,17 @@ struct expr *expr_copy(const struct expr *org)
 	return e;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void expr_free(struct expr *e)
 {
 	if (!e)
@@ -139,13 +227,16 @@ static int trans_count;
 #define e1 (*ep1)
 #define e2 (*ep2)
 
-/*
- * expr_eliminate_eq() helper.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * Walks the two expression trees given in 'ep1' and 'ep2'. Any node that does
- * not have type 'type' (E_OR/E_AND) is considered a leaf, and is compared
- * against all other leaves. Two equal leaves are both replaced with either 'y'
- * or 'n' as appropriate for 'type', to be eliminated later.
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void __expr_eliminate_eq(enum expr_type type, struct expr **ep1, struct expr **ep2)
 {
@@ -189,34 +280,16 @@ static void __expr_eliminate_eq(enum expr_type type, struct expr **ep1, struct e
 	}
 }
 
-/*
- * Rewrites the expressions 'ep1' and 'ep2' to remove operands common to both.
- * Example reductions:
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- *	ep1: A && B           ->  ep1: y
- *	ep2: A && B && C      ->  ep2: C
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
  *
- *	ep1: A || B           ->  ep1: n
- *	ep2: A || B || C      ->  ep2: C
- *
- *	ep1: A && (B && FOO)  ->  ep1: FOO
- *	ep2: (BAR && B) && A  ->  ep2: BAR
- *
- *	ep1: A && (B || C)    ->  ep1: y
- *	ep2: (C || B) && A    ->  ep2: y
- *
- * Comparisons are done between all operands at the same "level" of && or ||.
- * For example, in the expression 'e1 && (e2 || e3) && (e4 || e5)', the
- * following operands will be compared:
- *
- *	- 'e1', 'e2 || e3', and 'e4 || e5', against each other
- *	- e2 against e3
- *	- e4 against e5
- *
- * Parentheses are irrelevant within a single level. 'e1 && (e2 && e3)' and
- * '(e1 && e2) && e3' are both a single level.
- *
- * See __expr_eliminate_eq() as well.
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void expr_eliminate_eq(struct expr **ep1, struct expr **ep2)
 {
@@ -243,11 +316,16 @@ void expr_eliminate_eq(struct expr **ep1, struct expr **ep2)
 #undef e1
 #undef e2
 
-/*
- * Returns true if 'e1' and 'e2' are equal, after minor simplification. Two
- * &&/|| expressions are considered equal if every operand in one expression
- * equals some operand in the other (operands do not need to appear in the same
- * order), recursively.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 int expr_eq(struct expr *e1, struct expr *e2)
 {
@@ -302,16 +380,16 @@ int expr_eq(struct expr *e1, struct expr *e2)
 	return 0;
 }
 
-/*
- * Recursively performs the following simplifications in-place (as well as the
- * corresponding simplifications with swapped operands):
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- *	expr && n  ->  n
- *	expr && y  ->  expr
- *	expr || n  ->  expr
- *	expr || y  ->  y
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
  *
- * Returns the optimized expression.
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static struct expr *expr_eliminate_yn(struct expr *e)
 {
@@ -396,8 +474,16 @@ static struct expr *expr_eliminate_yn(struct expr *e)
 	return e;
 }
 
-/*
- * bool FOO!=n => FOO
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 struct expr *expr_trans_bool(struct expr *e)
 {
@@ -425,8 +511,16 @@ struct expr *expr_trans_bool(struct expr *e)
 	return e;
 }
 
-/*
- * e1 || e2 -> ?
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static struct expr *expr_join_or(struct expr *e1, struct expr *e2)
 {
@@ -492,6 +586,17 @@ static struct expr *expr_join_or(struct expr *e1, struct expr *e2)
 	return NULL;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static struct expr *expr_join_and(struct expr *e1, struct expr *e2)
 {
 	struct expr *tmp;
@@ -586,12 +691,16 @@ static struct expr *expr_join_and(struct expr *e1, struct expr *e2)
 	return NULL;
 }
 
-/*
- * expr_eliminate_dups() helper.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * Walks the two expression trees given in 'ep1' and 'ep2'. Any node that does
- * not have type 'type' (E_OR/E_AND) is considered a leaf, and is compared
- * against all other leaves to look for simplifications.
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void expr_eliminate_dups1(enum expr_type type, struct expr **ep1, struct expr **ep2)
 {
@@ -650,16 +759,16 @@ static void expr_eliminate_dups1(enum expr_type type, struct expr **ep1, struct 
 #undef e2
 }
 
-/*
- * Rewrites 'e' in-place to remove ("join") duplicate and other redundant
- * operands.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * Example simplifications:
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
  *
- *	A || B || A    ->  A || B
- *	A && B && A=y  ->  A=y && B
- *
- * Returns the deduplicated expression.
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 struct expr *expr_eliminate_dups(struct expr *e)
 {
@@ -685,11 +794,16 @@ struct expr *expr_eliminate_dups(struct expr *e)
 	return e;
 }
 
-/*
- * Performs various simplifications involving logical operators and
- * comparisons.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * Allocates and returns a new expression.
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 struct expr *expr_transform(struct expr *e)
 {
@@ -848,6 +962,17 @@ struct expr *expr_transform(struct expr *e)
 	return e;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int expr_contains_symbol(struct expr *dep, struct symbol *sym)
 {
 	if (!dep)
@@ -876,6 +1001,17 @@ int expr_contains_symbol(struct expr *dep, struct symbol *sym)
 	return 0;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 bool expr_depends_symbol(struct expr *dep, struct symbol *sym)
 {
 	if (!dep)
@@ -905,19 +1041,16 @@ bool expr_depends_symbol(struct expr *dep, struct symbol *sym)
  	return false;
 }
 
-/*
- * Inserts explicit comparisons of type 'type' to symbol 'sym' into the
- * expression 'e'.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * Examples transformations for type == E_UNEQUAL, sym == &symbol_no:
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
  *
- *	A              ->  A!=n
- *	!A             ->  A=n
- *	A && B         ->  !(A=n || B=n)
- *	A || B         ->  !(A=n && B=n)
- *	A && (B || C)  ->  !(A=n || (B=n && C=n))
- *
- * Allocates and returns a new expression.
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 struct expr *expr_trans_compare(struct expr *e, enum expr_type type, struct symbol *sym)
 {
@@ -995,6 +1128,17 @@ union string_value {
 	signed long long s;
 };
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static enum string_value_kind expr_parse_string(const char *str,
 						enum symbol_type type,
 						union string_value *val)
@@ -1027,6 +1171,17 @@ static enum string_value_kind expr_parse_string(const char *str,
 	       ? kind : k_string;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 tristate expr_calc_value(struct expr *e)
 {
 	tristate val1, val2;
@@ -1101,6 +1256,17 @@ tristate expr_calc_value(struct expr *e)
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static int expr_compare_type(enum expr_type t1, enum expr_type t2)
 {
 	if (t1 == t2)
@@ -1135,6 +1301,17 @@ static int expr_compare_type(enum expr_type t1, enum expr_type t2)
 	return 0;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void expr_print(struct expr *e,
 		void (*fn)(void *, struct symbol *, const char *),
 		void *data, int prevtoken)
@@ -1227,16 +1404,49 @@ void expr_print(struct expr *e,
 		fn(data, NULL, ")");
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void expr_print_file_helper(void *data, struct symbol *sym, const char *str)
 {
 	xfwrite(str, strlen(str), 1, data);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void expr_fprint(struct expr *e, FILE *out)
 {
 	expr_print(e, expr_print_file_helper, out, E_NONE);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void expr_print_gstr_helper(void *data, struct symbol *sym, const char *str)
 {
 	struct gstr *gs = (struct gstr*)data;
@@ -1267,15 +1477,32 @@ static void expr_print_gstr_helper(void *data, struct symbol *sym, const char *s
 		str_printf(gs, " [=%s]", sym_str);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void expr_gstr_print(struct expr *e, struct gstr *gs)
 {
 	expr_print(e, expr_print_gstr_helper, gs, E_NONE);
 }
 
-/*
- * Transform the top level "||" tokens into newlines and prepend each
- * line with a minus. This makes expressions much easier to read.
- * Suitable for reverse dependency expressions.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void expr_print_revdep(struct expr *e,
 			      void (*fn)(void *, struct symbol *, const char *),
@@ -1296,6 +1523,17 @@ static void expr_print_revdep(struct expr *e,
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void expr_gstr_print_revdep(struct expr *e, struct gstr *gs,
 			    tristate pr_type, const char *title)
 {

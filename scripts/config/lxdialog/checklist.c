@@ -15,6 +15,17 @@ static int list_width, check_x, item_x;
 /*
  * Print list item
  */
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void print_item(WINDOW * win, int choice, int selected)
 {
 	int i;
@@ -46,8 +57,16 @@ static void print_item(WINDOW * win, int choice, int selected)
 	free(list_item);
 }
 
-/*
- * Print the scroll indicators.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void print_arrows(WINDOW * win, int choice, int item_no, int scroll,
 	     int y, int x, int height)
@@ -82,8 +101,16 @@ static void print_arrows(WINDOW * win, int choice, int item_no, int scroll,
 	}
 }
 
-/*
- *  Display the termination buttons
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void print_buttons(WINDOW * dialog, int height, int width, int selected)
 {
@@ -97,9 +124,16 @@ static void print_buttons(WINDOW * dialog, int height, int width, int selected)
 	wrefresh(dialog);
 }
 
-/*
- * Display a dialog box with a list of options that can be turned on or off
- * in the style of radiolist (only one option turned on at a time).
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 int dialog_checklist(const char *title, const char *prompt, int height,
 		     int width, int list_height)

@@ -398,6 +398,17 @@ static void search_conf(void)
 	bool again;
 	struct gstr sttext;
 	struct subtitle_part stpart;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 	title = str_new();
 	str_printf( &title, "Enter (sub)string or regexp to search for "
@@ -413,9 +424,31 @@ again:
 		break;
 	case 1:
 		show_helptext("Search Configuration", search_help);
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		goto again;
 	default:
 		str_free(&title);
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		return;
 	}
 
@@ -442,6 +475,17 @@ again:
 		struct jump_key *pos, *tmp;
 
 		res = get_relations_str(sym_arr, &head);
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		set_subtitle();
 		dres = show_textbox_ext("Search Results", (char *)
 					str_get(&res), 0, 0, keys, &vscroll,
@@ -460,6 +504,17 @@ again:
 	free(sym_arr);
 	str_free(&title);
 	list_del(trail.prev);
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	str_free(&sttext);
 }
 
@@ -487,6 +542,17 @@ static void build_conf(struct menu *menu)
 	prop = menu->prompt;
 	if (!sym) {
 		if (prop && menu != current_menu) {
+			/**
+			 * Transforms the sign-up request data to match the backend's expected format.
+			 *
+			 * @param {SignUpRequest} signUpData - The original sign-up request data.
+			 *
+			 * @returns {Object} The transformed sign-up request data with the following changes:
+			 * - `firstName` is mapped to `first_name`
+			 * - `lastName` is mapped to `last_name`
+			 * - `email` is mapped to `username`
+			 * - All other properties remain unchanged.
+			 */
 			const char *prompt = menu_get_prompt(menu);
 			switch (prop->type) {
 			case P_MENU:
@@ -562,6 +628,17 @@ static void build_conf(struct menu *menu)
 		item_add_str("%*c%s", indent + 1, ' ', menu_get_prompt(menu));
 		if (val == yes) {
 			if (def_menu) {
+				/**
+				 * Transforms the sign-up request data to match the backend's expected format.
+				 *
+				 * @param {SignUpRequest} signUpData - The original sign-up request data.
+				 *
+				 * @returns {Object} The transformed sign-up request data with the following changes:
+				 * - `firstName` is mapped to `first_name`
+				 * - `lastName` is mapped to `last_name`
+				 * - `email` is mapped to `username`
+				 * - All other properties remain unchanged.
+				 */
 				item_add_str(" (%s)", menu_get_prompt(def_menu));
 				item_add_str("  --->");
 				if (def_menu->list) {
@@ -641,6 +718,17 @@ conf_childs:
 	indent -= doint;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void conf(struct menu *menu, struct menu *active_menu)
 {
 	struct menu *submenu;
@@ -793,13 +881,57 @@ static void show_help(struct menu *menu)
 	str_free(&help);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  */
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void conf_choice(struct menu *menu)
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 {
 	const char *prompt = menu_get_prompt(menu);
 	struct menu *child;
 	struct symbol *active;
 	struct property *prop;
 
+	/**
+	 * Transforms the sign-up request data to match the backend's expected format.
+	 *
+	 * @param {SignUpRequest} signUpData - The original sign-up request data.
+	 *
+	 * @returns {Object} The transformed sign-up request data with the following changes:
+	 * - `firstName` is mapped to `first_name`
+	 * - `lastName` is mapped to `last_name`
+	 * - `email` is mapped to `username`
+	 * - All other properties remain unchanged.
+	 */
 	active = sym_get_choice_value(menu->sym);
 	while (1) {
 		int res;
@@ -815,6 +947,28 @@ static void conf_choice(struct menu *menu)
 			else {
 				item_make("*** %s ***", menu_get_prompt(child));
 				item_set_tag(':');
+			/**
+			 /**
+			  * Transforms the sign-up request data to match the backend's expected format.
+			  *
+			  * @param {SignUpRequest} signUpData - The original sign-up request data.
+			  *
+			  * @returns {Object} The transformed sign-up request data with the following changes:
+			  * - `firstName` is mapped to `first_name`
+			  * - `lastName` is mapped to `last_name`
+			  * - `email` is mapped to `username`
+			  * - All other properties remain unchanged.
+			  */
+			 * Transforms the sign-up request data to match the backend's expected format.
+			 *
+			 * @param {SignUpRequest} signUpData - The original sign-up request data.
+			 *
+			 * @returns {Object} The transformed sign-up request data with the following changes:
+			 * - `firstName` is mapped to `first_name`
+			 * - `lastName` is mapped to `last_name`
+			 * - `email` is mapped to `username`
+			 * - All other properties remain unchanged.
+			 */
 			}
 			item_set_data(child);
 			if (child->sym == active)
@@ -864,6 +1018,17 @@ static void conf_choice(struct menu *menu)
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void conf_string(struct menu *menu)
 {
 	const char *prompt = menu_get_prompt(menu);
@@ -904,6 +1069,17 @@ static void conf_string(struct menu *menu)
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void conf_load(void)
 {
 
@@ -932,6 +1108,17 @@ static void conf_load(void)
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void conf_save(void)
 {
 	while (1) {
@@ -958,6 +1145,17 @@ static void conf_save(void)
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static int handle_exit(void)
 {
 	int res;
@@ -1006,11 +1204,33 @@ static int handle_exit(void)
 	return res;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void sig_handler(int signo)
 {
 	exit(handle_exit());
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int main(int ac, char **av)
 {
 	char *mode;

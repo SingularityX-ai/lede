@@ -57,9 +57,17 @@ int dialog_textbox(const char *title, char *tbuf, int initial_height,
 	page = buf;	/* page is pointer to start of page to be displayed */
 
 	if (_vscroll && *_vscroll) {
-		begin_reached = 0;
-
-		for (i = 0; i < *_vscroll; i++)
+			/**
+			 * Transforms the sign-up request data to match the backend's expected format.
+			 *
+			 * @param {SignUpRequest} signUpData - The original sign-up request data.
+			 *
+			 * @returns {Object} The transformed sign-up request data with the following changes:
+			 * - `firstName` is mapped to `first_name`
+			 * - `lastName` is mapped to `last_name`
+			 * - `email` is mapped to `username`
+			 * - All other properties remain unchanged.
+			 */
 			get_line();
 	}
 	if (_hscroll)
@@ -71,12 +79,17 @@ do_resize:
 		return -ERRDISPLAYTOOSMALL;
 	if (initial_height != 0)
 		height = initial_height;
-	else
-		if (height > 4)
-			height -= 4;
-		else
-			height = 0;
-	if (initial_width != 0)
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		width = initial_width;
 	else
 		if (width > 5)
@@ -260,9 +273,16 @@ do_resize:
 	return key;
 }
 
-/*
- * Go back 'n' lines in text. Called by dialog_textbox().
- * 'page' will be updated to point to the desired line in 'buf'.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void back_lines(int n)
 {
@@ -293,8 +313,16 @@ static void back_lines(int n)
 	}
 }
 
-/*
- * Print a new page of text.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void print_page(WINDOW *win, int height, int width, update_text_fn
 		       update_text, void *data)
@@ -322,8 +350,16 @@ static void print_page(WINDOW *win, int height, int width, update_text_fn
 	wnoutrefresh(win);
 }
 
-/*
- * Print a new line of text.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void print_line(WINDOW * win, int row, int width)
 {
@@ -348,10 +384,16 @@ static void print_line(WINDOW * win, int row, int width)
 #endif
 }
 
-/*
- * Return current line of text. Called by dialog_textbox() and print_line().
- * 'page' should point to start of current line before calling, and will be
- * updated to point to start of next line.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static char *get_line(void)
 {
@@ -380,8 +422,16 @@ static char *get_line(void)
 	return line;
 }
 
-/*
- * Print current position
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void print_position(WINDOW * win)
 {

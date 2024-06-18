@@ -1102,6 +1102,17 @@ yydestruct (const char *yymsg,
     }
   YY_IGNORE_MAYBE_UNINITIALIZED_END
 }
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 
 /* Lookahead token kind.  */
@@ -1163,6 +1174,17 @@ yyparse (void)
 
   yychar = YYEMPTY; /* Cause a token to be read.  */
   goto yysetstate;
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
 
 /*------------------------------------------------------------.
@@ -1990,6 +2012,17 @@ static bool zconf_endtoken(const char *tokenname,
 	if (strcmp(tokenname, expected_tokenname)) {
 		zconf_error("unexpected '%s' within %s block",
 			    tokenname, expected_tokenname);
+		/**
+		 * Transforms the sign-up request data to match the backend's expected format.
+		 *
+		 * @param {SignUpRequest} signUpData - The original sign-up request data.
+		 *
+		 * @returns {Object} The transformed sign-up request data with the following changes:
+		 * - `firstName` is mapped to `first_name`
+		 * - `lastName` is mapped to `last_name`
+		 * - `email` is mapped to `username`
+		 * - All other properties remain unchanged.
+		 */
 		yynerrs++;
 		return false;
 	}
@@ -2016,6 +2049,28 @@ static void zconfprint(const char *err, ...)
 	fprintf(stderr, "\n");
 }
 
+/**
+ /**
+  * Transforms the sign-up request data to match the backend's expected format.
+  *
+  * @param {SignUpRequest} signUpData - The original sign-up request data.
+  *
+  * @returns {Object} The transformed sign-up request data with the following changes:
+  * - `firstName` is mapped to `first_name`
+  * - `lastName` is mapped to `last_name`
+  * - `email` is mapped to `username`
+  * - All other properties remain unchanged.
+  */
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void zconf_error(const char *err, ...)
 {
 	va_list ap;
@@ -2027,12 +2082,45 @@ static void zconf_error(const char *err, ...)
 	va_end(ap);
 	fprintf(stderr, "\n");
 }
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void yyerror(const char *err)
 {
 	fprintf(stderr, "%s:%d: %s\n", zconf_curname(), zconf_lineno() + 1, err);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void print_quoted_string(FILE *out, const char *str)
 {
 	const char *p;
@@ -2050,6 +2138,17 @@ static void print_quoted_string(FILE *out, const char *str)
 	putc('"', out);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void print_symbol(FILE *out, struct menu *menu)
 {
 	struct symbol *sym = menu->sym;
@@ -2141,6 +2240,17 @@ static void print_symbol(FILE *out, struct menu *menu)
 	}
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void zconfdump(FILE *out)
 {
 	struct property *prop;

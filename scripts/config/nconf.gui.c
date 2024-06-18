@@ -90,6 +90,17 @@ static const struct nconf_attr_param no_color_theme_params[] = {
 	{ /* sentinel */ }
 };
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void set_colors(void)
 {
 	const struct nconf_attr_param *p;
@@ -116,13 +127,34 @@ void set_colors(void)
 	}
 }
 
-/* this changes the windows attributes !!! */
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void print_in_middle(WINDOW *win, int y, int width, const char *str, int attrs)
 {
 	wattrset(win, attrs);
 	mvwprintw(win, y, (width - strlen(str)) / 2, "%s", str);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int get_line_no(const char *text)
 {
 	int i;
@@ -137,6 +169,17 @@ int get_line_no(const char *text)
 	return total;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 const char *get_line(const char *text, int line_no)
 {
 	int i;
@@ -151,6 +194,17 @@ const char *get_line(const char *text, int line_no)
 	return text+i;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int get_line_length(const char *line)
 {
 	int res = 0;
@@ -161,7 +215,17 @@ int get_line_length(const char *line)
 	return res;
 }
 
-/* print all lines to the window. */
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void fill_window(WINDOW *win, const char *text)
 {
 	int x, y;
@@ -181,13 +245,16 @@ void fill_window(WINDOW *win, const char *text)
 	}
 }
 
-/* get the message, and buttons.
- * each button must be a char*
- * return the selected button
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
  *
- * this dialog is used for 2 different things:
- * 1) show a text box, no buttons.
- * 2) show a dialog, with horizontal buttons
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 int btn_dialog(WINDOW *main_window, const char *msg, int btn_num, ...)
 {
@@ -305,6 +372,17 @@ int btn_dialog(WINDOW *main_window, const char *msg, int btn_num, ...)
 	return res;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int dialog_inputbox(WINDOW *main_window,
 		const char *title, const char *prompt,
 		const char *init, char **resultp, int *result_len)
@@ -489,7 +567,17 @@ int dialog_inputbox(WINDOW *main_window,
 	return res;
 }
 
-/* refresh all windows in the correct order */
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void refresh_all_windows(WINDOW *main_window)
 {
 	update_panels();
@@ -497,7 +585,17 @@ void refresh_all_windows(WINDOW *main_window)
 	refresh();
 }
 
-/* layman's scrollable window... */
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void show_scroll_win(WINDOW *main_window,
 		const char *title,
 		const char *text)

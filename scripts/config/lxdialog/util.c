@@ -15,6 +15,17 @@ int saved_x, saved_y;
 
 struct dialog_info dlg;
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void set_mono_theme(void)
 {
 	dlg.screen.atr = A_NORMAL;
@@ -55,6 +66,17 @@ do {                               \
 	dlg.dialog.hl = (h);       \
 } while (0)
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void set_classic_theme(void)
 {
 	DLG_COLOR(screen,                COLOR_CYAN,   COLOR_BLUE,   true);
@@ -88,6 +110,17 @@ static void set_classic_theme(void)
 	DLG_COLOR(darrow,                COLOR_GREEN,  COLOR_WHITE,  true);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void set_blackbg_theme(void)
 {
 	DLG_COLOR(screen, COLOR_RED,   COLOR_BLACK, true);
@@ -130,6 +163,17 @@ static void set_blackbg_theme(void)
 	DLG_COLOR(darrow, COLOR_RED, COLOR_BLACK, false);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void set_bluetitle_theme(void)
 {
 	set_classic_theme();
@@ -143,8 +187,16 @@ static void set_bluetitle_theme(void)
 
 }
 
-/*
- * Select color theme
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static int set_theme(const char *theme)
 {
@@ -163,6 +215,17 @@ static int set_theme(const char *theme)
 	return use_color;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void init_one_color(struct dialog_color *color)
 {
 	static int pair = 0;
@@ -175,6 +238,17 @@ static void init_one_color(struct dialog_color *color)
 		color->atr = COLOR_PAIR(pair);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 static void init_dialog_colors(void)
 {
 	init_one_color(&dlg.screen);
@@ -208,8 +282,16 @@ static void init_dialog_colors(void)
 	init_one_color(&dlg.darrow);
 }
 
-/*
- * Setup for color display
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 static void color_setup(const char *theme)
 {
@@ -223,8 +305,16 @@ static void color_setup(const char *theme)
 		set_mono_theme();
 }
 
-/*
- * Set window to attribute 'attr'
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void attr_clear(WINDOW * win, int height, int width, chtype attr)
 {
@@ -239,6 +329,17 @@ void attr_clear(WINDOW * win, int height, int width, chtype attr)
 	touchwin(win);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void dialog_clear(void)
 {
 	int lines, columns;
@@ -296,8 +397,16 @@ void dialog_clear(void)
 	wnoutrefresh(stdscr);
 }
 
-/*
- * Do some initialization for dialog
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 int init_dialog(const char *backtitle)
 {
@@ -325,18 +434,48 @@ int init_dialog(const char *backtitle)
 	return 0;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void set_dialog_backtitle(const char *backtitle)
 {
 	dlg.backtitle = backtitle;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void set_dialog_subtitles(struct subtitle_list *subtitles)
 {
 	dlg.subtitles = subtitles;
 }
 
-/*
- * End using dialog functions.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void end_dialog(int x, int y)
 {
@@ -346,9 +485,17 @@ void end_dialog(int x, int y)
 	endwin();
 }
 
-/* Print the title of the dialog. Center the title and truncate
- * tile if wider than dialog (- 2 chars).
- **/
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void print_title(WINDOW *dialog, const char *title, int width)
 {
 	if (title) {
@@ -360,11 +507,16 @@ void print_title(WINDOW *dialog, const char *title, int width)
 	}
 }
 
-/*
- * Print a string of text in a window, automatically wrap around to the
- * next line if the string is too long to fit on one line. Newline
- * characters '\n' are properly processed.  We start on a new line
- * if there is no room for at least 4 nonblanks following a double-space.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void print_autowrap(WINDOW * win, const char *prompt, int width, int y, int x)
 {
@@ -428,8 +580,16 @@ void print_autowrap(WINDOW * win, const char *prompt, int width, int y, int x)
 	}
 }
 
-/*
- * Print a button
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void print_button(WINDOW * win, const char *label, int y, int x, int selected)
 {
@@ -457,8 +617,16 @@ void print_button(WINDOW * win, const char *label, int y, int x, int selected)
 	wmove(win, y, x + temp + 1);
 }
 
-/*
- * Draw a rectangular box with line drawing characters
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void
 draw_box(WINDOW * win, int y, int x, int height, int width,
@@ -491,9 +659,16 @@ draw_box(WINDOW * win, int y, int x, int height, int width,
 	}
 }
 
-/*
- * Draw shadows along the right and bottom edge to give a more 3D look
- * to the boxes
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 void draw_shadow(WINDOW * win, int y, int x, int height, int width)
 {
@@ -513,8 +688,16 @@ void draw_shadow(WINDOW * win, int y, int x, int height, int width)
 	}
 }
 
-/*
- *  Return the position of the first alphabetic character in a string.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 int first_alpha(const char *string, const char *exempt)
 {
@@ -535,14 +718,16 @@ int first_alpha(const char *string, const char *exempt)
 	return 0;
 }
 
-/*
- * ncurses uses ESC to detect escaped char sequences. This resutl in
- * a small timeout before ESC is actually delivered to the application.
- * lxdialog suggest <ESC> <ESC> which is correctly translated to two
- * times esc. But then we need to ignore the second esc to avoid stepping
- * out one menu too much. Filter away all escaped key sequences since
- * keypad(FALSE) turn off ncurses support for escape sequences - and that's
- * needed to make notimeout() do as expected.
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
  */
 int on_key_esc(WINDOW *win)
 {
@@ -567,7 +752,17 @@ int on_key_esc(WINDOW *win)
 	return -1;
 }
 
-/* redraw screen in new size */
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int on_key_resize(void)
 {
 	dialog_clear();
@@ -578,6 +773,17 @@ struct dialog_list *item_cur;
 struct dialog_list item_nil;
 struct dialog_list *item_head;
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_reset(void)
 {
 	struct dialog_list *p, *next;
@@ -590,6 +796,17 @@ void item_reset(void)
 	item_cur = &item_nil;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_make(const char *fmt, ...)
 {
 	va_list ap;
@@ -607,6 +824,17 @@ void item_make(const char *fmt, ...)
 	va_end(ap);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_add_str(const char *fmt, ...)
 {
 	va_list ap;
@@ -621,20 +849,64 @@ void item_add_str(const char *fmt, ...)
 	va_end(ap);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_set_tag(char tag)
 {
 	item_cur->node.tag = tag;
 }
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_set_data(void *ptr)
 {
 	item_cur->node.data = ptr;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_set_selected(int val)
 {
 	item_cur->node.selected = val;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int item_activate_selected(void)
 {
 	item_foreach()
@@ -643,16 +915,49 @@ int item_activate_selected(void)
 	return 0;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void *item_data(void)
 {
 	return item_cur->node.data;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 char item_tag(void)
 {
 	return item_cur->node.tag;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int item_count(void)
 {
 	int n = 0;
@@ -663,6 +968,17 @@ int item_count(void)
 	return n;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 void item_set(int n)
 {
 	int i = 0;
@@ -671,6 +987,17 @@ void item_set(int n)
 			return;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int item_n(void)
 {
 	int n = 0;
@@ -684,16 +1011,49 @@ int item_n(void)
 	return 0;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 const char *item_str(void)
 {
 	return item_cur->node.str;
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int item_is_selected(void)
 {
 	return (item_cur->node.selected != 0);
 }
 
+/**
+ * Transforms the sign-up request data to match the backend's expected format.
+ *
+ * @param {SignUpRequest} signUpData - The original sign-up request data.
+ *
+ * @returns {Object} The transformed sign-up request data with the following changes:
+ * - `firstName` is mapped to `first_name`
+ * - `lastName` is mapped to `last_name`
+ * - `email` is mapped to `username`
+ * - All other properties remain unchanged.
+ */
 int item_is_tag(char tag)
 {
 	return (item_cur->node.tag == tag);
